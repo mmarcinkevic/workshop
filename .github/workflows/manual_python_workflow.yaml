@@ -23,6 +23,6 @@ jobs:
         
     - name: Retrieve data from Jira
       env:
-        JIRA_ACCOUNT_EMAIL: ${{ secrets.JIRA_ACCOUNT_EMAIL }}
+        JIRA_ACCOUNT_EMAIL: ${{ vars.JIRA_ACCOUNT_EMAIL }}
         JIRA_ACCOUNT_TOKEN: ${{ secrets.JIRA_ACCOUNT_TOKEN }}
       run: python main.py
