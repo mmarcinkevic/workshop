@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  freelancer-onboarding:
+  jira-data-retrieval:
     runs-on: ubuntu-latest
     
     steps:
@@ -22,5 +22,7 @@ jobs:
         #pip install -r requirements.txt
         
     - name: Retrieve data from Jira
-    
+      env:
+        JIRA_ACCOUNT_EMAIL: ${{ secrets.JIRA_ACCOUNT_EMAIL }}
+        JIRA_ACCOUNT_TOKEN: ${{ secrets.JIRA_ACCOUNT_TOKEN }}
       run: python main.py
